@@ -1,0 +1,33 @@
+{
+  "name": "bloodbank",
+  "version": "1.0.0",
+  "description": "> Project Blood Bank is to provide services for the people who are in > need of blood by getting help from the donors who are interested in donating blood > for the people.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serleh/BloodBank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serleh/BloodBank/issues"
+  },
+  "homepage": "https://github.com/serleh/BloodBank#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^17.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
