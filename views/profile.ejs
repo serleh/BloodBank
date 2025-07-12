@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <h2>Welcome, <%= donor.name %>!</h2>
+    <p>📧 Email: <%= donor.email %></p>
+    <p>🏙️ City: <%= donor.city %></p>
+    <p>🩸 Blood Group: <%= donor.bloodGroup %></p>
+    <p>📱 Contact: <%= donor.contactNumber %></p>
+    <p>🎂 DOB: <%= donor.dateOfBirth.toDateString() %></p>
+
+    <a href="/logout">Logout</a>
+    <a href="/donors/profile/edit">
+      <button>Edit Profile</button>
+    </a>
+  </body>
+</html>
