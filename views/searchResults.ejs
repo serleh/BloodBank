@@ -1,0 +1,17 @@
+<% if (message) { %>
+<p><%= message %></p>
+
+<% if (fallbackContacts && fallbackContacts.length > 0) { %>
+<h3>Contact These Life-Saving Contacts in Nearby Cities:</h3>
+<ul>
+  <% fallbackContacts.forEach(contact => { %>
+  <li>
+    👤 <strong><%= contact.name %></strong><br />
+    🏙️ City: <%= contact.city %><br />
+    🏥 Organization: <%= contact.organization %><br />
+    📞 Phone: <%= contact.phoneNumber %>
+  </li>
+  <hr />
+  <% }) %>
+</ul>
+<% } %> <% } %>
