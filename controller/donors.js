@@ -39,13 +39,48 @@ module.exports = {
     res.render("search.ejs");
   },
 
+  // searchDonor: async (req, res) => {
+  //   const { city, bloodGroup } = req.body;
+  //   try {
+  //     const donors = await Donor.find({
+  //       city: { $regex: new RegExp(city, "i") },
+  //       bloodGroup: { $regex: new RegExp(bloodGroup, "i") },
+  //     });
+
+  //     if (donors.length === 0) {
+  //       const fallbackContacts = await Contact.find({
+  //         city: { $ne: city },
+  //       }).limit(3);
+
+  //       return res.render("searchResults.ejs", {
+  //         message: "SORRY DONORS ARE NOT AVAILABLE IN THIS CITY.",
+  //         donors: [],
+  //         fallbackContacts,
+  //       });
+  //     }
+
+  //     res.render("searchResults.ejs", { donors, message: null });
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // },
+
   searchDonor: async (req, res) => {
     const { city, bloodGroup } = req.body;
+    console.log("Search Inputs:", city, bloodGroup);
+
+    const allDonors = await Donor.find({});
+    // console.log("All Donors in DB:", allDonors);
+
     try {
       const donors = await Donor.find({
-        city: { $regex: new RegExp(city, "i") },
-        bloodGroup: bloodGroup,
+        city: { $regex: new RegExp(city.trim(), "i") },
+        bloodGroup: {
+          $regex: new RegExp(bloodGroup.trim().replace(/\+/g, "\\+"), "i"),
+        },
       });
+
+      //console.log("Matched Donors:", donors);
 
       if (donors.length === 0) {
         const fallbackContacts = await Contact.find({
@@ -59,7 +94,11 @@ module.exports = {
         });
       }
 
-      res.render("searchResults.ejs", { donors, message: null });
+      res.render("searchResults.ejs", {
+        donors,
+        message: null,
+        fallbackContacts: [],
+      });
     } catch (err) {
       console.error(err);
     }

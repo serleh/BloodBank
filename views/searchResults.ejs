@@ -1,17 +1,42 @@
-<% if (message) { %>
-<p><%= message %></p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+  </head>
+  <body>
+    <h2>Search Results</h2>
 
-<% if (fallbackContacts && fallbackContacts.length > 0) { %>
-<h3>Contact These Life-Saving Contacts in Nearby Cities:</h3>
-<ul>
-  <% fallbackContacts.forEach(contact => { %>
-  <li>
-    👤 <strong><%= contact.name %></strong><br />
-    🏙️ City: <%= contact.city %><br />
-    🏥 Organization: <%= contact.organization %><br />
-    📞 Phone: <%= contact.phoneNumber %>
-  </li>
-  <hr />
-  <% }) %>
-</ul>
-<% } %> <% } %>
+    <% if (message) { %>
+    <p><%= message %></p>
+
+    <% if (fallbackContacts && fallbackContacts.length > 0) { %>
+    <h3>Contact These Life-Saving Contacts in Nearby Cities:</h3>
+    <ul>
+      <% fallbackContacts.forEach(contact => { %>
+      <li>
+        👤 <strong><%= contact.name %></strong><br />
+        🏙️ City: <%= contact.city %><br />
+        🏥 Organization: <%= contact.organization %><br />
+        📞 Phone: <%= contact.phoneNumber %>
+      </li>
+      <hr />
+      <% }) %>
+    </ul>
+    <% } %> <% } %> <% if (donors && donors.length > 0) { %>
+    <h3>Matching Donors:</h3>
+    <ul>
+      <% donors.forEach(donor => { %>
+      <li>
+        👤 <strong><%= donor.name %></strong><br />
+        🏙️ City: <%= donor.city %><br />
+        🩸 Blood Group: <%= donor.bloodGroup %><br />
+        📞 Phone: <%= donor.contactNumber %>
+      </li>
+      <hr />
+      <% }) %>
+    </ul>
+    <% } %>
+  </body>
+</html>
