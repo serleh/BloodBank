@@ -32,9 +32,9 @@ To create a full-stack platform where:
 
 ## Planned Features
 
-- [ ] Donor registration and login
-- [ ] Donor profile modification
-- [ ] Search by blood group & city
+- [✅ ] Donor registration and login
+- [ ✅] Donor profile modification
+- [✅ ] Search by blood group & city
 - [ ] Emergency contact referral
 - [ ] (Planned) SMS/pager-style emergency broadcasting
 - [ ] Informational pages (FAQs, donation tips, eligibility)
