@@ -45,7 +45,7 @@ To create a full-stack platform where:
 
    npm install
 
-2. ** create a .env file**
+2. **create a .env file**
 
 PORT=3000
 DB_STRING=your_database_connection_string_here
@@ -55,6 +55,6 @@ PORT=3000
 DB_STRING=your_database_connection_string_here
 SESSION_SECRET=your_secret_key_here
 
-3. ** Run the app**
+3. **Run the app**
 
 npm start
